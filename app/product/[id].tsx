@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
 const mockProducts = [
   { id: "1", name: "Product 1", price: "29.99", image: "/assets/images/product_1.jpg" },
@@ -24,9 +25,11 @@ const ProductPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Product Image */}
             <div>
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
+                width={500} // Set the desired width
+                height={500} // Set the desired height
                 className="w-full h-auto rounded-lg shadow"
               />
             </div>

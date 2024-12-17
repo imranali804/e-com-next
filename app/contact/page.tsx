@@ -6,9 +6,7 @@ const Contact = () => {
       <Navbar />
       <main className="container mx-auto p-6">
         <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
-        <p className="text-gray-700 mb-6">
-          We'd love to hear from you! Fill out the form below or reach us at <a href="mailto:support@eshop.com" className="text-blue-500 hover:underline">support@eshop.com</a>.
-        </p>
+        <p>We can&apos;t wait to hear from you!</p>
         <form className="space-y-4">
           <div>
             <label htmlFor="name" className="block text-gray-700 font-medium">
