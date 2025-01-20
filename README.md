@@ -1,46 +1,70 @@
-# **E-Commerce Platform**
+# E-commerce Website Development in Next.js, TypeScript, TailwindCSS, and Sanity
 
-This is an e-commerce platform built using [Next.js](https://nextjs.org), bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Project Overview
 
-## **Tech Stack**
+This repository is the foundation of an e-commerce website being built with Next.js, TypeScript, TailwindCSS, and Sanity. The goal of this project is to create a high-performance, scalable, and user-friendly online shopping platform.
 
-- **Framework**: [Next.js](https://nextjs.org)  
-- **Language**: TypeScript  
-- **Styling**: [Tailwind CSS](https://tailwindcss.com)  
-- **Assets**: Next.js `Image` component for optimized image handling  
-- **Routing**: File-based dynamic routing with Next.js  
+---
 
-## **Features**
+## Development Log
 
-- **Homepage**: Attractive landing page showcasing the site's purpose.
-- **Shop Page**: Grid-based product catalog with responsive layout.
-- **Product Details**: Individual product pages using dynamic routing.
-- **About Page**: A brief overview of the site.
-- **Contact Page**: Contact form (currently static for UI demonstration).
-- **Responsive Design**: Mobile-first design for all screen sizes.
-- **Performance Optimization**: Fast-loading pages with optimized assets.
+### Day 1: Brainstorming and Defining Goals
 
-## **Getting Started**
+- **Activity:** Used paper and pencil to brainstorm ideas and define the goals for the e-commerce website.
+- **Goals Defined:**
+  - **User experience:** Easy-to-navigate UI with a clear, responsive design.
+  - **Performance:** Ensure fast loading times and smooth user interactions.
+  - **Scalability:** Build a solution that can easily scale as the product catalog grows.
+  - **Flexibility:** The ability to add and update products, categories, and content easily.
+  - **Integrations:** Provide secure payment gateway integration and API integrations.
 
-### **1. Prerequisites**
-Ensure you have the following installed on your system:
-- [Node.js](https://nodejs.org) (v16 or newer)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+### Day 2: Planned the Technical Foundation
 
-### **2. Clone the Repository**
-```bash
-git clone https://github.com/your-repository-name.git
-cd your-repository-name
+- **Activity:** Planned the technical foundation of the project.
+- **Decisions:**
+  - **Next.js:** Chosen as the framework for building the website, offering benefits like server-side rendering and static site generation for improved performance.
+  - **TypeScript:** Type safety is added for enhanced developer experience and to minimize runtime errors.
+  - **TailwindCSS:** Utilized for quick styling and ensuring a responsive, mobile-first design.
+  - **Sanity:** Used as a headless CMS to manage product data, content, and other dynamic elements.
 
-### **3. Install Dependencies**
-```bash
-npm install
-# or
-yarn install
+- **Database Model:** Set up initial content models in Sanity, including Product, Category, and User models.
+- **State Management:** Decided to use React Context API for state management across the app.
 
-### **4. Run the Development Server**
-npm run dev
-# or
-yarn dev
+### Day 3: API Integration and Data Migration
 
-Open http://localhost:3000 in your browser to view the application.
+- **Activity:** Focused on API integration and migrating product data.
+- **Tasks Completed:**
+  - **API Integration:**
+    - Integrated Sanity CMS API to fetch product data, categories, and other relevant information.
+    - Built server-side logic to retrieve data using Next.js’s `getServerSideProps` and `getStaticProps`.
+  - **Data Migration:**
+    - Migrated initial product data into the Sanity CMS to allow for easy management and updates.
+    - Ensured product images, descriptions, and pricing data were correctly migrated and available on the website.
+
+---
+
+## Setup Instructions
+
+To get started with the project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/ecommerce-nextjs.git
+   cd ecommerce-nextjs
+2. Install dependencies:
+   ```bash
+   npm install
+
+3. Set up environment variables:   
+  -Create a .env.local file in the root of the project and configure the necessary environment variables (e.g., Sanity API credentials, Stripe keys, etc.).
+4. Run the development server:
+   ```bash
+   npm run dev
+
+Your application should be accessible at http://localhost:3000.  
+
+### Technologies Used
+  - Next.js: React framework for building the website with SSR and static site generation.
+  - TypeScript: Type safety to catch errors during development.
+  - TailwindCSS: Utility-first CSS framework for fast and responsive design.
+  - Sanity: Headless CMS to manage product data and content.
