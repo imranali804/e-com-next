@@ -1,38 +1,42 @@
-import React from "react";
-import Image from "next/image";
+// components/ProductCard.tsx (Enhanced with Animations)
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { Product } from '@/utils/api';
+import Link from 'next/link';
+import { FiShoppingCart } from 'react-icons/fi';
+import { toast } from 'react-hot-toast';
 
-type ProductCardProps = {
-  id: string;
-  name: string;
-  price: string;
-  image: string;
-};
+export default function ProductCard({ product }: { product: Product }) {
 
-const ProductCard: React.FC<ProductCardProps> = ({ id, name, price, image }) => {
   return (
-    <div className="border rounded-lg shadow hover:shadow-lg">
-      {/* Replace <img> with Next.js <Image> */}
-      <div className="relative w-full h-64">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.02 }}
+      className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+    >
+      <Link href={`/product/${product.id}`} className="block relative h-64 overflow-hidden rounded-t-xl">
         <Image
-          src={image}
-          alt={name}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-t-lg"
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-      </div>
-      <div className="p-4">
-        <h3 className="font-bold text-lg">{name}</h3>
-        <p className="text-gray-700 mt-2">${price}</p>
-        <a
-          href={`/product/${id}`}
-          className="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          View Details
-        </a>
-      </div>
-    </div>
-  );
-};
+      </Link>
 
-export default ProductCard;
+      <div className="p-4">
+        <Link href={`/product/${product.id}`} className="group">
+          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
+            {product.name}
+          </h3>
+          <p className="text-gray-500 text-sm mt-1 line-clamp-2">{product.description}</p>
+        </Link>
+
+        <div className="mt-4 flex justify-between items-center">
+          <span className="text-xl font-bold text-purple-600">${product.price}</span>
+        </div>
+      </div>
+    </motion.div>
+  );
+}

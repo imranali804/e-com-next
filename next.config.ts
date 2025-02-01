@@ -1,5 +1,17 @@
 import type { NextConfig } from "next";
 
+// next.config.js
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/products',
+        destination: 'https://next-ecommerce-template-4.vercel.app/api/product'
+      }
+    ];
+  }
+};
+
 const nextConfig: NextConfig = {
   eslint: {
     // Ignore ESLint errors during the build process
